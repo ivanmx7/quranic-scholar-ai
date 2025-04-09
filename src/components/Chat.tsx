@@ -75,15 +75,17 @@ const Chat: React.FC<ChatProps> = ({ conversation, onUpdateConversation }) => {
                 Welcome to QuranGPT
               </h2>
               <p className="text-islamic-light mb-4">
-                I am an AI assistant specialized in Islamic knowledge. I can help with
+                I am an AI assistant specialized in Islamic knowledge, with comprehensive information about the Quran. I can help with
                 questions about:
               </p>
               <ul className="text-islamic-light text-left mb-4 space-y-2">
-                <li>• The Holy Quran and its interpretations</li>
+                <li>• The Holy Quran: its history, structure, content, and interpretation</li>
+                <li>• The 114 chapters (surahs) and 6,236 verses (ayat) of the Quran</li>
+                <li>• The compilation and preservation of the Quranic text</li>
+                <li>• The literary style and inimitability (i'jaz) of the Quran</li>
                 <li>• Hadith and Sunnah of Prophet Muhammad ﷺ</li>
-                <li>• All Prophets mentioned in Islamic texts</li>
+                <li>• The 25 prophets mentioned in the Quran</li>
                 <li>• Islamic jurisprudence (Fiqh) and rulings (Halal/Haram)</li>
-                <li>• Islamic history and civilization</li>
                 <li>• Islamic practices and rituals</li>
               </ul>
               <p className="text-islamic-light text-sm italic">

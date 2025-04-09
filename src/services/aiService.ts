@@ -2,6 +2,8 @@
 // This is a mock service for the Gemini API
 // In a real implementation, you would integrate with the actual Gemini API
 
+import { searchQuranKnowledge } from '@/data/quranKnowledge';
+
 interface Message {
   role: 'user' | 'assistant' | 'system';
   content: string;
@@ -32,14 +34,18 @@ export const sendChatMessage = async (
     };
   }
 
-  // For demo purposes, return a hardcoded response based on the question
+  // For demo purposes, return a response based on the question
+  // First check if it's a Quran question that can be answered from our knowledge base
   if (lastMessage.includes('quran')) {
-    return {
-      message: {
-        role: 'assistant',
-        content: "The Holy Quran is the central religious text of Islam. Muslims believe it was revealed by Allah (God) to the Prophet Muhammad through the angel Gabriel over a period of approximately 23 years, beginning in 610 CE when Muhammad was 40, and concluding in 632 CE, the year of his death. The Quran consists of 114 chapters (surahs) which contain a total of 6,236 verses (ayat). It is regarded by Muslims as the main miracle of Muhammad, as proof of his prophethood, and as the culmination of a series of divine messages."
-      }
-    };
+    const quranInfo = searchQuranKnowledge(lastMessage);
+    if (quranInfo) {
+      return {
+        message: {
+          role: 'assistant',
+          content: quranInfo
+        }
+      };
+    }
   }
 
   if (lastMessage.includes('hadith')) {
