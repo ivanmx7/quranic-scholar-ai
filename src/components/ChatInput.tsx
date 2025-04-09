@@ -27,7 +27,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading }) => {
     >
       <div className="flex flex-col space-y-2">
         <Textarea
-          placeholder="Ask a question about Islam, Quran, or Hadith..."
+          placeholder="Ask about Quran, Hadith, Prophets, or Islamic rulings (halal/haram)..."
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           className="resize-none bg-islamic-dark border-islamic-green text-islamic-light"

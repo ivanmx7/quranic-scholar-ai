@@ -81,7 +81,8 @@ const Chat: React.FC<ChatProps> = ({ conversation, onUpdateConversation }) => {
               <ul className="text-islamic-light text-left mb-4 space-y-2">
                 <li>• The Holy Quran and its interpretations</li>
                 <li>• Hadith and Sunnah of Prophet Muhammad ﷺ</li>
-                <li>• Islamic jurisprudence (Fiqh)</li>
+                <li>• All Prophets mentioned in Islamic texts</li>
+                <li>• Islamic jurisprudence (Fiqh) and rulings (Halal/Haram)</li>
                 <li>• Islamic history and civilization</li>
                 <li>• Islamic practices and rituals</li>
               </ul>
