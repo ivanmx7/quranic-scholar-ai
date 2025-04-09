@@ -22,10 +22,10 @@ An AI-powered assistant for exploring the Holy Quran, providing verse explanatio
 ### Prerequisites
 - Python 3.8+
 - OpenAI API key (or your preferred LLM provider)
-- Quran API key (recommended: https://alquran.cloud/api)
+- Quran API key 
 
 ### Quick Start
 ```bash
-git clone https://github.com/yourusername/quran-gpt.git
+git clone https://github.com/Ahmadjamil888/quranic-scholar-ai
 cd quran-gpt
 pip install -r requirements.txt
