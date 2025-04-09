@@ -18,24 +18,33 @@ export const formatDate = (date: Date): string => {
 
 // Save conversations to local storage
 export const saveConversationsToLocalStorage = (conversations: Conversation[]): void => {
-  localStorage.setItem('qurangpt-conversations', JSON.stringify(conversations));
+  try {
+    localStorage.setItem('qurangpt-conversations', JSON.stringify(conversations));
+  } catch (error) {
+    console.error("Failed to save conversations to localStorage:", error);
+  }
 };
 
 // Get conversations from local storage
 export const getConversationsFromLocalStorage = (): Conversation[] => {
-  const conversations = localStorage.getItem('qurangpt-conversations');
-  if (!conversations) return [];
-  
-  // Parse the conversations and ensure dates are converted back to Date objects
-  return JSON.parse(conversations).map((conversation: any) => ({
-    ...conversation,
-    createdAt: new Date(conversation.createdAt),
-    updatedAt: new Date(conversation.updatedAt),
-    messages: conversation.messages.map((message: any) => ({
-      ...message,
-      timestamp: new Date(message.timestamp)
-    }))
-  }));
+  try {
+    const conversations = localStorage.getItem('qurangpt-conversations');
+    if (!conversations) return [];
+    
+    // Parse the conversations and ensure dates are converted back to Date objects
+    return JSON.parse(conversations).map((conversation: any) => ({
+      ...conversation,
+      createdAt: new Date(conversation.createdAt),
+      updatedAt: new Date(conversation.updatedAt),
+      messages: conversation.messages.map((message: any) => ({
+        ...message,
+        timestamp: new Date(message.timestamp)
+      }))
+    }));
+  } catch (error) {
+    console.error("Failed to retrieve conversations from localStorage:", error);
+    return [];
+  }
 };
 
 // Create a new conversation
@@ -68,4 +77,12 @@ export const addMessageToConversation = (
     messages: [...conversation.messages, message],
     updatedAt: new Date()
   };
+};
+
+// Delete conversation by ID
+export const deleteConversation = (
+  conversations: Conversation[],
+  conversationId: string
+): Conversation[] => {
+  return conversations.filter(c => c.id !== conversationId);
 };

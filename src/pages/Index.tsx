@@ -8,10 +8,12 @@ import {
   createNewConversation,
   getConversationsFromLocalStorage,
   saveConversationsToLocalStorage,
+  deleteConversation,
 } from "@/utils/chatUtils";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
 
 const Index = () => {
   const [conversations, setConversations] = useState<Conversation[]>([]);
@@ -47,11 +49,24 @@ const Index = () => {
   }, [isMobile]);
 
   const handleNewConversation = () => {
-    const newConversation = createNewConversation();
-    setConversations([newConversation, ...conversations]);
-    setActiveConversationId(newConversation.id);
-    if (isMobile) {
-      setShowSidebar(false);
+    try {
+      const newConversation = createNewConversation();
+      setConversations((prev) => [newConversation, ...prev]);
+      setActiveConversationId(newConversation.id);
+      if (isMobile) {
+        setShowSidebar(false);
+      }
+      toast({
+        title: "New conversation created",
+        description: "Start asking questions about Islamic topics",
+      });
+    } catch (error) {
+      console.error("Error creating new conversation:", error);
+      toast({
+        title: "Error",
+        description: "Failed to create new conversation",
+        variant: "destructive",
+      });
     }
   };
 
@@ -63,16 +78,31 @@ const Index = () => {
   };
 
   const handleDeleteConversation = (id: string) => {
-    const updatedConversations = conversations.filter((c) => c.id !== id);
-    setConversations(updatedConversations);
-    
-    // If we deleted the active conversation, set the first conversation as active
-    if (id === activeConversationId) {
-      if (updatedConversations.length > 0) {
-        setActiveConversationId(updatedConversations[0].id);
-      } else {
-        handleNewConversation();
+    try {
+      const updatedConversations = deleteConversation(conversations, id);
+      setConversations(updatedConversations);
+      
+      // If we deleted the active conversation, set the first conversation as active
+      if (id === activeConversationId) {
+        if (updatedConversations.length > 0) {
+          setActiveConversationId(updatedConversations[0].id);
+        } else {
+          // If no conversations left, create a new one
+          handleNewConversation();
+        }
       }
+      
+      toast({
+        title: "Conversation deleted",
+        description: "The conversation has been removed",
+      });
+    } catch (error) {
+      console.error("Error deleting conversation:", error);
+      toast({
+        title: "Error",
+        description: "Failed to delete conversation",
+        variant: "destructive",
+      });
     }
   };
 

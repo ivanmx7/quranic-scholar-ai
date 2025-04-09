@@ -21,6 +21,11 @@ const ChatHistory: React.FC<ChatHistoryProps> = ({
   onDeleteConversation,
   onNewConversation,
 }) => {
+  const handleDelete = (e: React.MouseEvent, id: string) => {
+    e.stopPropagation();
+    onDeleteConversation(id);
+  };
+
   return (
     <div className="h-full flex flex-col bg-islamic-dark border-r border-islamic-gold">
       <div className="p-4 border-b border-islamic-gold">
@@ -65,10 +70,7 @@ const ChatHistory: React.FC<ChatHistoryProps> = ({
                   <Button
                     variant="ghost"
                     size="icon"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onDeleteConversation(conversation.id);
-                    }}
+                    onClick={(e) => handleDelete(e, conversation.id)}
                     className="opacity-70 hover:opacity-100 text-islamic-light hover:bg-islamic-green/50"
                   >
                     <Trash2 className="h-4 w-4" />
