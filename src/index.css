@@ -1,92 +1,87 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 40 33% 98%;
+    --foreground: 128 48% 10%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 33% 95%;
+    --card-foreground: 128 48% 10%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 33% 98%;
+    --popover-foreground: 128 48% 10%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 142 53% 24%;
+    --primary-foreground: 40 33% 95%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 40 33% 85%;
+    --secondary-foreground: 142 53% 24%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 40 33% 90%;
+    --muted-foreground: 142 53% 30%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 45% 58%;
+    --accent-foreground: 128 48% 10%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 40 33% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 142 30% 35%;
+    --input: 142 30% 35%;
+    --ring: 142 53% 24%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 132 67% 21%;
+    --sidebar-foreground: 40 33% 90%;
+    --sidebar-primary: 45 45% 58%;
+    --sidebar-primary-foreground: 128 48% 10%;
+    --sidebar-accent: 132 67% 16%;
+    --sidebar-accent-foreground: 40 33% 90%;
+    --sidebar-border: 40 33% 90%;
+    --sidebar-ring: 45 45% 58%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 128 48% 8%;
+    --foreground: 40 33% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 128 48% 10%;
+    --card-foreground: 40 33% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 128 48% 8%;
+    --popover-foreground: 40 33% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 142 53% 24%;
+    --primary-foreground: 40 33% 95%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 128 48% 15%;
+    --secondary-foreground: 40 33% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 128 48% 15%;
+    --muted-foreground: 40 33% 85%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 45 45% 58%;
+    --accent-foreground: 128 48% 8%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 40 33% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 142 30% 35%;
+    --input: 142 30% 35%;
+    --ring: 45 45% 58%;
+
+    --sidebar-background: 128 48% 8%;
+    --sidebar-foreground: 40 33% 95%;
+    --sidebar-primary: 45 45% 58%;
+    --sidebar-primary-foreground: 128 48% 8%;
+    --sidebar-accent: 128 48% 10%;
+    --sidebar-accent-foreground: 40 33% 95%;
+    --sidebar-border: 142 30% 35%;
+    --sidebar-ring: 45 45% 58%;
   }
 }
 
@@ -97,5 +92,34 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+  
+  .islamic-border {
+    @apply border-4 border-islamic-gold rounded-md p-4;
+    background-image: radial-gradient(circle at center, rgba(198, 169, 98, 0.1) 0, transparent 70%);
+  }
+  
+  .islamic-pattern-bg {
+    background-color: #0F2D10;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657l1.415 1.414L13.857 0H11.03zm32.284 0L39.9 3.414 42.03 0h1.284zM18.686 0l3.414 3.414L19.97 0h-1.284zM36.343 0l-1.414 1.414L33.515 0h2.828zM23.657 0l1.414 1.414L26.485 0h-2.828zM30 0l-1.414 1.414L30 2.828l1.414-1.414L30 0zm-2.828 3.243L20 10.414 13.242 3.657 16.97 0h2.828l-1.414 1.414 1.414 1.414-1.414 1.414-1.414-1.414-1.414 1.414L15.143 0H12.57l3.657 3.657L0 20.485l5.657 5.657L10 22.627l5.657 5.657L20 24.97 15.142 20.1l-3.656 3.657-1.414-1.415 5.657-5.656-5.657-5.657 5.657-5.657 1.415 1.414 1.414-1.414-1.414-1.414L13.3 3.658 16.97 0l3.657 3.657 1.414-1.414L18.686 0h2.828l3.414 3.414 1.414-1.414-1.414-1.414L22.143 0h2.828l1.414 1.414 1.414-1.414-1.414-1.414L23.657 0h2.828l1.414 1.414L30 0l1.414 1.414-1.414 1.414 1.414 1.414-1.414 1.414-1.414-1.414-1.414 1.414-1.414-1.414-1.414 1.414L23.657 0l-1.414 1.414 1.414 1.414-1.414 1.414-1.414-1.414-1.414 1.414L17.9 1.828 16.485 0h-2.828L10 3.657 7.172 0H4.343L0 4.343l5.657 5.657L10 6.585 14.343 10.9 10 15.314 0 5.657l1.414-1.414L0 2.828l1.414-1.414L0 0l4.343 4.343L8.686 0H7.4z' fill='%231d5c3f' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+  
+  .islamic-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #1D5C3F #0F2D10;
+  }
+  
+  .islamic-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .islamic-scrollbar::-webkit-scrollbar-track {
+    background: #0F2D10;
+  }
+  
+  .islamic-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #1D5C3F;
+    border-radius: 4px;
+    border: 2px solid #0F2D10;
   }
 }
