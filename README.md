@@ -1,73 +1,31 @@
-# Welcome to your Lovable project
+# Quran GPT 🤖📖
 
-## Project info
+[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yourusername/quran-gpt/)
 
-**URL**: https://lovable.dev/projects/467668ac-d7fd-47dd-af65-ade155813848
+An AI-powered assistant for exploring the Holy Quran, providing verse explanations, contextual insights, and answers grounded in authentic Islamic scholarship.
 
-## How can I edit this code?
+![Quran GPT Demo](demo.gif) *(Replace with actual screenshot)*
 
-There are several ways of editing your application.
+## Features ✨
 
-**Use Lovable**
+- **Verse Retrieval**: Get any Quranic verse by Surah/Ayah reference
+- **Multilingual Support**: Access multiple translations (English, Urdu, French, etc.)
+- **Tafsir Integration**: Explanations from reputable classical and contemporary scholars
+- **Q&A System**: Ask questions about Quranic teachings and receive cited responses
+- **Contextual Understanding**: AI that recognizes the nuance of Quranic verses
+- **Ethical Safeguards**: Built-in protections against misinterpretation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/467668ac-d7fd-47dd-af65-ade155813848) and start prompting.
+## Installation 🛠️
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
+- Python 3.8+
+- OpenAI API key (or your preferred LLM provider)
+- Quran API key (recommended: https://alquran.cloud/api)
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/467668ac-d7fd-47dd-af65-ade155813848) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes it is!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Quick Start
+```bash
+git clone https://github.com/yourusername/quran-gpt.git
+cd quran-gpt
+pip install -r requirements.txt
