@@ -34,7 +34,13 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading }) => {
           rows={3}
           disabled={isLoading}
         />
-        <div className="flex justify-end">
+        <div className="flex justify-between items-center">
+          <div className="text-xs text-islamic-light/70 flex items-center">
+            <span className="flex items-center">
+              <span className="w-2 h-2 bg-green-500 rounded-full mr-1 animate-pulse"></span>
+              Powered by Gemini AI
+            </span>
+          </div>
           <Button
             type="submit"
             disabled={isLoading || !message.trim()}
